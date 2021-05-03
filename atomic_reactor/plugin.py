@@ -142,6 +142,8 @@ class PluginsRunner(object):
         # imp.findmodule('atomic_reactor') doesn't work
         plugins_dir = os.path.join(os.path.dirname(__file__), 'plugins')
         logger.debug("loading plugins from dir '%s'", plugins_dir)
+        logger.user_warning(message="A user warning defined to test koji-c")
+        logger.user_warning(message="Another user warning")
         files = [os.path.join(plugins_dir, f)
                  for f in os.listdir(plugins_dir)
                  if f.endswith(".py")]
